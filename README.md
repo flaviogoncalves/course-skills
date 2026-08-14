@@ -12,6 +12,7 @@ A course lives in a folder, and each skill writes a file the next one reads:
 course/
   contract.md      course-grill      the interview with the expert
   outline.md       course-outline    the lesson sequence
+  design.md        build-design      the visual system
   lessons/…                          content, labs, references
 ```
 
@@ -25,6 +26,7 @@ The contract is the file that makes the rest reproducible. Regenerate a lesson s
 | `course-outline` | Turns the contract into a progression of capability — and enforces the opening that generated outlines skip: welcome, problem, mental model, environment. |
 | `lesson-references` | Finds sources for **one** lesson, from that lesson's own title and objectives, and rejects anything that fails an authority test. |
 | `lesson-content` | Writes the lesson body: concrete claims, counter-examples, grounded in real sources, no packaging. |
+| `build-design` | Builds the visual system — colour roles, type scale, shape, contrast rules — as a `design.md` in Material Design's token vocabulary. Run before slides. |
 | `slide-generation` | Turns a lesson into slides plus spoken narration — the slide carries the skeleton, the narration carries the detail. |
 
 ## Why these exist

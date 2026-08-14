@@ -7,6 +7,8 @@ description: Turn one lesson into slides plus spoken narration. Enforces the spl
 
 Slides for one lesson. Two outputs per slide: what is **seen**, and what is **said**.
 
+Read `course/design.md` first — colour roles, type scale, the scrim rule, and the list of things this brand never does. If it does not exist, run `build-design` before this. Slides that each invent their own colours read as a pile of screens, not a course.
+
 ## The split that makes slides work
 
 A slide is not a document. It is visual support for speech.
@@ -56,6 +58,22 @@ diagram                       ~300px
 Stay under ~480px. The combinations that overflow almost every time: four or more wrapping bullets; bullets plus code plus callout together; an image alongside dense bullets; a diagram plus anything beyond the title.
 
 **If the content does not fit, split it into two slides.** Two clear slides beat one crowded slide that gets cut. Splitting is not a failure — cramming is.
+
+## Composition
+
+Most slides are a vertical stack, and that is correct for sequential content. Reach for a different composition only when the relationship between the parts is **spatial**.
+
+**Two columns.** The height of a two-column slide is the height of the *taller column*, not the sum — so this is real space, not decoration. Content that overflowed stacked will fit side by side.
+
+Use it when the halves are genuine pairs: before and after, option A and option B, code on one side and the explanation on the other, a list beside a diagram.
+
+Do not use it to cram more into a slide that was already full. If the two columns have nothing to do with each other, they are two slides.
+
+**Full-bleed image.** One image fills the stage; a little text sits over it. The background image costs no vertical budget — it *is* the stage.
+
+Good for an opening, a module transition, or a single strong statement. With more than a short line or two over it, it becomes an unreadable poster.
+
+**Always apply the scrim** from `design.md` when text sits over an image. Light text on a light photograph disappears, and it disappears only on the projector, after you have shipped. Erring too dark is recoverable; erring illegible is not.
 
 ## Diagrams
 
