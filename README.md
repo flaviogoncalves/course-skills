@@ -24,6 +24,8 @@ The contract is the file that makes the rest reproducible. Regenerate a lesson s
 | `course-grill` | Interviews the expert until there is a contract: promise, audience and what they already know, misconceptions, what is out of scope, the lab plan. Run this first. |
 | `course-outline` | Turns the contract into a progression of capability — and enforces the opening that generated outlines skip: welcome, problem, mental model, environment. |
 | `lesson-references` | Finds sources for **one** lesson, from that lesson's own title and objectives, and rejects anything that fails an authority test. |
+| `lesson-content` | Writes the lesson body: concrete claims, counter-examples, grounded in real sources, no packaging. |
+| `slide-generation` | Turns a lesson into slides plus spoken narration — the slide carries the skeleton, the narration carries the detail. |
 
 ## Why these exist
 
@@ -32,6 +34,8 @@ They are the parts that generators get wrong in ways that are invisible until so
 **The outline opens in the wrong place.** No welcome, no basics, straight into the subject. Usually because a rule like "deliver a concrete win by lesson 3" is applied to a 27-lesson course, leaving one slot for everything foundational.
 
 **The references are almost right.** A course-level pool of eight links distributed across twenty-five lessons produces a plausible, mis-assigned source on every lesson — and if references feed content generation, that becomes the material the lesson is written from.
+
+**The slides are walls of text.** Written as a document instead of visual support, so the student has to choose between reading and listening and loses both — and the last block renders cut off, because nothing summed the heights before adding it.
 
 **The labs contradict each other.** Written in isolation, one tells the student to rebuild from scratch what the previous one made. Patching this afterwards by reading the earlier labs is archaeology; deciding the build order up front is not.
 
