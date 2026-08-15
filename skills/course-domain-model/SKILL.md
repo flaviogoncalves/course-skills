@@ -27,9 +27,10 @@ The unit where a session happens. Participants join a room; media flows inside i
 - **Not the same because**: a room has no fixed capacity and no dial-in identity of its own
 - **Introduced in**: lesson 3 — The mental model
 - **Confused with**: session (a room can outlive one)
+- **Said**: only when a speech engine gets it wrong — see `narration-audio`
 ```
 
-Four fields, and each earns its place.
+Four fields earn their place always; the fifth appears only when needed.
 
 **They call it** is the translation. When several of their words collapse into one of yours — or one of theirs splits into several of yours — you have found a concept the course must teach *explicitly*, not in passing. That mismatch is the mental-model lesson, and it is the lesson generated outlines skip every single time.
 

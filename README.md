@@ -2,7 +2,7 @@
 
 Agent skills for building a real course — the craft, as markdown files you can read in 90 seconds and edit yourself.
 
-Twelve skills that take you from "I want to teach this" to a course with an outline, sources, lessons, slides, labs and questions. Each is one `SKILL.md`. No DSL, no orchestrator, nothing to install.
+Thirteen skills that take you from "I want to teach this" to a course with an outline, sources, lessons, slides, labs and questions. Each is one `SKILL.md`. No DSL, no orchestrator, nothing to install.
 
 ## Install
 
@@ -49,6 +49,7 @@ Inside the course repo, in order:
 /slide-generation      per lesson — slides plus the spoken narration
 /lab-generator         per practical lesson — one milestone, every step checkable
 /question-generation   per lesson — questions whose wrong answers are real mistakes
+/narration-audio       per lesson — the written narration becomes audio, last of all
 /course-review         the whole course at once, before you record anything
 ```
 
@@ -101,6 +102,7 @@ That turns vocabulary into a dependency you can check — and it catches the def
 | `slide-generation` | Per lesson, after the content. Slides plus narration: the slide carries the skeleton, the narration teaches. |
 | `lab-generator` | Per practical lesson. One milestone, starting from the state the last lab left, every step with a check. |
 | `question-generation` | Per lesson. Questions tied to objectives, with distractors drawn from mistakes this audience actually makes. |
+| `narration-audio` | The narration text is settled and you want audio. One voice for the course, pronunciation from the glossary, resumable per chunk. |
 | `course-eval` | Judging one artifact. Compliance fails; quality scores. Reads the checklist of whichever skill produced it. |
 | `course-review` | The lessons exist and you are about to record. Judges the course, not the artifacts. |
 | `course-maintenance` | The course is published and the subject moved. Audits for rot using each lesson's own references as the tripwire. |
@@ -134,8 +136,6 @@ The rules here come from generating real courses and watching them break. The **
 Each skill ends with a *Known rough edges* section naming what it does not solve. Those are honest, not modest — reordering lessons quietly breaks both glossary ownership and lab inheritance, and nothing in here checks it for you.
 
 ## What is not here
-
-**Narration audio.** The rules for *writing* narration live in `slide-generation`; producing the audio — voice, pacing, chunking — does not exist yet.
 
 **Course-level topic research.** Deliberately absent. A general research pass produces a pool of references, and a pool becomes a distribution — the exact failure `lesson-references` exists to prevent.
 
