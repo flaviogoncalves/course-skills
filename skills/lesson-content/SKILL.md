@@ -54,6 +54,20 @@ For the main concept, include at least one of:
 
 The contract's `misconceptions` list is the best source for these. If the audience already believes something wrong, say it plainly and correct it — do not tiptoe.
 
+## No references, no lesson
+
+**Stop before writing if this lesson has no sources.** This is a gate, not advice.
+
+A lesson written without sources is written from the model's memory, and it is indistinguishable — to you, to the reader, to any later review — from one written from documentation. That is the failure mode that quietly halves a course: some lessons anchored in real material, the rest fluent invention, and nothing anywhere marking which is which.
+
+Zero references is sometimes the *correct* outcome of searching: the candidates were read and none had the authority to ground teaching. Correct, and still a stop. Three ways out, all deliberate:
+
+1. **The expert supplies one.** Ask. They usually have it — the page they always send people to.
+2. **Their own material is the source.** A book, a repo, a previous course is a reference. Cite it as one.
+3. **The lesson is written from the instructor's own practice**, and *says so in the text*. An expert with twenty years of it is legitimate grounding, but it has to be declared: "in my experience, on this hardware" is honest, and it is a different claim from "the documentation states". Undeclared, the two are identical on the page and only one of them is true.
+
+What you may not do is write it anyway and stay quiet.
+
 ## Grounded, or silent
 
 Write from the lesson's references. Do not invent facts, numbers, version behaviour, command flags or names.
@@ -85,6 +99,7 @@ Second person for instructions ("you configure", not "one configures" or "the us
 - [ ] No abstract claim without a number, command, example or named failure
 - [ ] Every acronym expanded on first use
 - [ ] At least one counter-example, boundary, or corrected misconception
+- [ ] The lesson had sources before you started, or one of the three exits was taken deliberately
 - [ ] Every fact traceable to a source; every gap declared instead of filled
 - [ ] Nothing from the out-of-scope list crept in
 - [ ] Nothing re-explains an earlier lesson or depends on a later one

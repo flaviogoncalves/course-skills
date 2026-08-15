@@ -55,11 +55,13 @@ The practical test: **if this page is wrong, does anyone fix it?** A primary sou
 
 **A source that is on-topic but has no authority is rejected.** This is the most common case and the most tempting one — the blog talks about exactly the lesson's subject, which is precisely why it looks good.
 
-## Empty is a correct answer
+## Empty is a correct answer — and it blocks the lesson
 
 Approving zero is legitimate and will happen often. A lesson with no source is visible and recoverable; a wrong source approved in silence becomes grounding and is not.
 
 Cap it at three. Do not fill slots.
+
+But report the empty result loudly. Downstream, no sources means the lesson cannot be written yet — the expert supplies a source, their own material is used, or the lesson is written from declared experience. A lesson that silently proceeds with nothing is how half a course ends up grounded in the model's memory.
 
 ## Do not let one page serve the whole course
 

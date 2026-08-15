@@ -32,6 +32,7 @@ It also carries something a codebase glossary has no reason to: **which lesson i
 | `course-grill` | Interviews the expert until there is a contract: promise, audience and what they already know, misconceptions, what is out of scope, the lab plan. Run this first. |
 | `course-outline` | Turns the contract into a progression of capability — and enforces the opening that generated outlines skip: welcome, problem, mental model, environment. |
 | `lesson-references` | Finds sources for **one** lesson, from that lesson's own title and objectives, and rejects anything that fails an authority test. |
+| `course-eval` | Judges an artifact against the contract and against the checklist of the skill that made it — compliance fails, quality scores. |
 | `lesson-content` | Writes the lesson body: concrete claims, counter-examples, grounded in real sources, no packaging. |
 | `build-design` | Builds the visual system — colour roles, type scale, shape, contrast rules — as a `design.md` in Material Design's token vocabulary. Run before slides. |
 | `slide-generation` | Turns a lesson into slides plus spoken narration — the slide carries the skeleton, the narration carries the detail. |
