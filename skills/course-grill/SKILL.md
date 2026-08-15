@@ -55,17 +55,68 @@ Update `course/contract.md` as each part settles, not at the end.
 
 **What is out of scope.** Without it the syllabus inflates: every adjacent topic looks like it belongs, and the course ends up long and shallow.
 
-**The environment and prerequisites.** What must be installed, provisioned, or already known before lesson one. Skip it and the student stalls for a reason that is not the subject of the course.
+**Prerequisites, split in two.** These are different questions and muddling them costs a lesson:
+
+- **What the student must already KNOW.** This decides where the course starts. "Comfortable on a Linux shell" moves lesson one; "has read our other course" moves it further.
+- **What the student must already HAVE** — installed, provisioned, licensed, an account created. This becomes the set-up lesson, and every item needs to be checkable: "Docker 24 or newer", not "a working environment".
+
+Get the versions. "Recent Node" is not a prerequisite; it is a support ticket. And ask what happens on the wrong version — if the course breaks silently on an older one, that belongs in the contract, not in a comment nobody reads.
 
 **The instructor's angle.** Who they are, why they have standing, what opinion they hold that differs from consensus. The only thing about the course that cannot be researched.
 
 **The lab plan.** Do the labs build **one thing that grows**, or are they **independent exercises**? Anything teaching a system is almost always the first: install it, add users, connect it outward, handle failure, secure it — the same instance, growing. A course of techniques is the second: each shot in a photography course stands alone.
 
-If continuous, get what the student ends up with and the order the pieces arrive in. Without it, each lab is written in isolation and they contradict each other — one tells the student to rebuild from scratch what the last one made.
+If continuous, you need three things, and record them as **structure, not prose** — the order is load-bearing, and prose has no order:
 
-Also ask **how the student confirms it worked**. A lab with no success signal is a typing exercise: they run it and cannot tell if they got it right.
+- **The artifact**: what the student ends up holding. One sentence.
+- **The milestones, in sequence**: what each step adds to that artifact. This ordering becomes the order of the practical lessons, so getting it wrong here reorders the course.
+- **The success signal, per milestone**: the command, the screen, the sound. How the student knows this step worked before starting the next.
+
+Without the sequence, each lab is written in isolation and they contradict each other — one tells the student to rebuild from scratch what the last one made, another asks for something built in a language no earlier lab used.
+
+Without the success signal, a lab is a typing exercise: they run it and cannot tell if they got it right, so they carry a broken system into the next lesson and blame themselves.
 
 "No labs" is a valid, explicit answer. Silence is not.
+
+## The shape of the contract
+
+Write the fields, not an essay. Everything downstream reads this file mechanically.
+
+```markdown
+# Contract: <course title>
+
+## Promise
+One sentence, an observable capability.
+
+## Audience
+Who they are.
+
+### Already knows
+- …            ← do not spend lessons here
+
+### Must know before lesson one
+- …            ← decides where the course starts
+
+### Must have before lesson one
+- Docker 24+   ← becomes the set-up lesson; each item checkable
+
+## Out of scope
+- …            ← every later step treats this as a refusal, not a hint
+
+## Labs
+Style: continuous | isolated | none
+Artifact: what the student ends up with
+
+| # | Milestone | Success signal |
+|---|---|---|
+| 1 | …         | …              |
+
+## Instructor angle
+Who teaches, and why them.
+
+## Open questions
+- …            ← declared holes, not filled ones
+```
 
 ## Decisions worth a file
 

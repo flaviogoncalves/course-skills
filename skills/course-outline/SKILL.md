@@ -31,7 +31,11 @@ This is a genre convention, not a preference. People who buy an online course ex
 
 How to detect it: **when several misconceptions in the contract share a conceptual root, that root is the missing lesson.** Items of the form "assumes X works like the world they came from" are all the same item.
 
-**If there is a practical environment, setting it up is a lesson, and it comes early.** Install, provision, create the account, and *verify it works* before moving on. Otherwise the student reaches the first hands-on lesson and stalls for a reason that is not the subject of the course. This lesson also states what they needed beforehand.
+**If there is a practical environment, setting it up is a lesson, and it comes early.** Install, provision, create the account, and *verify it works* before moving on. Otherwise the student reaches the first hands-on lesson and stalls for a reason that is not the subject of the course.
+
+Its content is already decided: the contract's **must have before lesson one** list, item by item, each with the check that proves it. Do not re-invent it, and do not soften the versions — "Docker 24+" stays "Docker 24+".
+
+**The contract's milestone order is the order of the practical lessons.** It is a sequence because the artifact grows; reordering it silently breaks every lab after the point you moved. If the pedagogy demands a different order, that is a finding to take back to the expert, not a decision to make here.
 
 **The first win is proportional to course length.** By lesson 3 in a 5–8 lesson course; within roughly the first 15% in a course of 20+. In a 27-lesson course, spending three lessons on foundation and delivering the win in the fourth is *correct*, not slow. A fixed "win by lesson 3" rule is what produces courses with no introduction and no basics.
 
