@@ -69,6 +69,23 @@ Deduplicate by **page, not by domain**. Twenty-five lessons citing twenty-five d
 
 If you are processing lessons in parallel, reserve a page the moment a lesson claims it, and release it if the gate rejects it. Reading committed state is not enough: two lessons in flight both read before either writes, and both claim the same link.
 
+## It's working if
+
+- Every query contains words from this lesson's own title or objectives
+- Most lessons end with one or two sources, not three
+- Some lessons end with none, and that is reported rather than hidden
+- Two lessons rarely share a page, and often share a domain
+- You rejected something on-topic because it had no authority, and can say which
+- A lesson's sources would still be defensible to the expert who is teaching it
+
+## Known rough edges
+
+**Authority is a proxy, not truth.** Official documentation is sometimes outdated, occasionally wrong, and always incentivised. The ranking picks sources with an owner who will fix them, which is different from sources that are correct.
+
+**Whole categories are invisible.** Paywalled research, books, printed standards and anything behind a login will not appear, however authoritative. For some subjects the best source is one the search cannot reach, and only the expert knows it exists.
+
+**A new subject has no primary source yet.** When the thing being taught is months old, the ranking degrades to blog posts and conference talks, and this skill will reject nearly all of them. That is honest, and it means new subjects lean on the expert rather than on search.
+
 ## If the gate cannot run
 
 Approve nothing. When judgement is unavailable — an outage, a rate limit, an unparseable response — the failure is rarely limited to one lesson, and falling back to "top search results" would reference the whole course by raw ranking with no authority test, indistinguishable from real approval.

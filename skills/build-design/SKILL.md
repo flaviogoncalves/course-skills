@@ -41,6 +41,18 @@ A palette lets someone put the accent on the accent. Role pairs make that a nami
 
 **Every pair carries its measured contrast ratio.** Body text needs **4.5:1**; large text (24px, or 18.7px bold) and UI edges need **3:1**. Write the number next to the pair. A pair you did not measure is a pair that will fail on a projector.
 
+Measure it, do not estimate it. For each colour, convert every channel to a 0–1 fraction, linearise it, then take the weighted sum:
+
+```
+c' = c/255
+linear(c) = c' <= 0.03928 ? c'/12.92 : ((c' + 0.055)/1.055) ** 2.4
+L = 0.2126·linear(R) + 0.7152·linear(G) + 0.0722·linear(B)
+
+ratio = (L_lighter + 0.05) / (L_darker + 0.05)
+```
+
+The result runs from 1 (identical) to 21 (black on white). Green weighs nine times more than blue, which is why a blue that looks dark enough often is not.
+
 Define the whole set for **light and dark**. Slides get shown in both, and a deck that only works dark will be presented in a bright room eventually.
 
 **`scrim`** deserves its own line: it is the overlay that makes text survive on top of a photograph. Say how dark it is, and when it is required — any text over a full-bleed image, always. This is the one token that prevents the most common unreadable slide.
@@ -111,6 +123,24 @@ How it sits on light and on dark, the minimum clear space around it, the minimum
 ## This brand never
 - …
 ```
+
+## It's working if
+
+- A generator can apply the file literally, with no judgement calls left in it
+- Every foreground names the surface it sits on, so an unreadable pair is a naming error rather than an accident
+- No pair carries a ratio you did not compute
+- Someone can build a slide in dark mode and in light mode without asking you anything
+- The "never" list makes a generator's default output wrong, rather than describing taste
+
+## Known rough edges
+
+**A passing ratio is not legibility.** Hairline weights, tight tracking and thin strokes fail at 4.5:1 while satisfying it. The ratio catches the worst pairs; it does not certify the good ones.
+
+**The room is not modelled.** A deck built for a laptop washes out on a projector in a lit hall, and nothing in a token file knows which you are in. If the course will be presented live, test one slide in the actual room before committing the palette.
+
+**Nothing stops text landing on a busy image.** The scrim rule mitigates it; a photograph with high-frequency detail behind small type defeats the scrim and only looking catches it.
+
+**Print and video are different mediums.** These tokens assume screens. Anything destined for PDF handouts or heavy compression needs its own check — thin type and low-contrast pairs are the first casualties of both.
 
 ## Before you finish
 

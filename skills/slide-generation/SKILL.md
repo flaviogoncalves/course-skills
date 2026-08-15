@@ -107,6 +107,23 @@ Reading the bullets aloud wastes both channels. The slide already said it.
 
 The narration adds: why it matters, what happens if you get it wrong, the number behind the claim, the transition to the next idea. If your narration is the bullets in full sentences, you have written one channel twice and taught with neither.
 
+## It's working if
+
+- Reading only the slides gives the shape of the lesson; reading only the narration teaches it
+- No slide would survive being read aloud verbatim — because the narration says something else
+- The deck's length follows the lesson's objectives rather than a habit
+- Every slide fits its stage with room left, and the ones that did not became two slides
+- Someone glancing for five seconds takes away the point
+- The words on the slide are the glossary's words
+
+## Known rough edges
+
+**The height numbers belong to one renderer.** They are a worked example of the method, not constants. Ported without recalibration they will be confidently wrong, and the failure looks like a slide cut off at the bottom.
+
+**The five-second test cannot be automated.** It is the most important check here and the only one that needs a human eye — everything mechanical passes long before a slide is actually skimmable.
+
+**Nothing verifies the deck against the lesson.** Slides are made from written content, so they can drift into a different emphasis while remaining internally excellent. `course-eval` looks for this; this skill cannot see it from inside one deck.
+
 ## Before you finish each slide
 
 - [ ] Would a five-second glance deliver the main idea?

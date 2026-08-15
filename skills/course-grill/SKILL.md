@@ -22,32 +22,17 @@ Three things come out of a session, and they are not equal.
 
 That last row catches people out. Most of what you discuss earns no file, deliberately. A session that produced only a sharper glossary worked.
 
-## The glossary is the point
+## Vocabulary, during the interview
 
-`course-domain-model` owns the discipline — what earns a record, the four fields, the ownership rule. Read it; this section is only what the interview needs.
+`course-domain-model` owns this: what earns a record, the fields, the ownership rule. Follow it.
 
-In a course, a glossary is not a definitions list. It is a **translation table**: the word the audience uses today beside the word this course will use.
+What the interview adds is the raw material. Listen for the moment the expert says *"they call it X, but here it's Y"* — that sentence is a glossary entry, and it is the highest-value thing an expert gives away without being asked.
 
-```markdown
-## room
-The unit where a session happens.
-The audience calls this a **channel** or a **conference** today. Not the same thing:
-a room has no fixed capacity and no dial-in identity of its own.
-```
-
-The second half is what makes it worth writing, and it does two jobs.
-
-**It finds the lesson that must exist.** When several of the audience's words collapse into one of the course's — or one splits into several — you have found a concept the course has to teach explicitly, before first use. That lesson is the one generated outlines skip, every time.
-
-**It keeps every later step consistent.** The outline knows which lesson is required, the lesson content knows which word to use, the slides stop alternating between both. Without it, each step re-derives the vocabulary and they disagree.
-
-Write a term the moment it resolves. Challenge the expert when they use a word the glossary already defines differently — a course that calls one thing by two names teaches the student to distrust it.
-
-Keep it pure vocabulary: no procedure, no scope, no spec-like prose. Those belong in the contract.
+Write it the moment it resolves. And challenge a word the glossary already defines differently, rather than accepting a second meaning quietly.
 
 ## The contract
 
-Update `course/contract.md` as each part settles, not at the end.
+Update `course/contract.md` as each part settles.
 
 **The promise.** What the student can *do* at the end, observable. "Understand Kubernetes" is not a promise. "Deploy a service and roll it back after a failed release" is.
 

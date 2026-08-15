@@ -92,6 +92,23 @@ Write like an experienced instructor talking to a competent adult. Not academic,
 
 Second person for instructions ("you configure", not "one configures" or "the user must"). Present tense. Short sentences carrying one idea each. A technical term stays in the original language when a specialist in that field would say it that way in normal speech.
 
+## It's working if
+
+- Every paragraph carries something the student did not have before reading it
+- You could point at the source behind any factual claim, without searching again
+- The lesson corrects at least one thing this audience believes wrongly
+- Someone who read the previous lesson finds no repetition, and no unexplained jump
+- It reads as one person talking, not as a manual and an essay stitched together
+- When the sources ran out, the text says so instead of continuing smoothly
+
+## Known rough edges
+
+**Sourced is not true.** Everything here checks that a claim traces to a source, not that the source is right. A confidently wrong primary source produces a confidently wrong lesson, and nothing in this skill can see it.
+
+**The declared-experience exit is unfalsifiable.** "In my experience" is honest grounding and also the easiest thing to write when there is nothing to stand on. It works because an expert is accountable for it; it does not work as a habit.
+
+**Continuity is asserted, not checked.** Not repeating an earlier lesson requires having read it. Across a long course, that stops happening, and the second explanation of the same concept is invisible from inside the lesson.
+
 ## Before you finish
 
 - [ ] Every stated objective has a section that serves it

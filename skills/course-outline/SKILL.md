@@ -71,6 +71,23 @@ At least one objective at Apply or above per lesson — **except** the welcome a
 
 Group consecutive lessons under a module with a title and a short explanatory text. **Never number the lessons or modules in their titles** — numbering is denormalised state: the moment you reorder, "3.2" lies and someone has to renumber by hand. Numbering is computed at render time, never stored.
 
+## It's working if
+
+- A stranger reading only the outline can say what the student will be able to do at the end
+- Lesson 1 receives the student; lesson 2 gives them a reason; nothing teaches before either
+- There is a lesson that owns each concept the audience currently gets wrong
+- You can walk any lesson and name what earlier lesson supplied each thing it assumes
+- Nothing from the contract's out-of-scope list appears, however naturally it fits
+- Removing any lesson would break a later one — if one can go without consequence, it was padding
+
+## Known rough edges
+
+**It is tuned for self-paced courses people choose to buy.** The welcome lesson is a genre convention there. Mandatory compliance training, university modules and internal onboarding have different conventions, and applying this one to them will feel wrong to their audience.
+
+**Lesson count arrives as a given.** Nothing here decides how many lessons a subject deserves; it distributes what it was told to. A target set badly upstream produces a well-shaped outline of the wrong size.
+
+**Duration estimates are guesses.** How long a topic takes to teach depends on the audience's real starting point, which nobody knows until people take it. Treat the minutes as intent, not measurement.
+
 ## Before you write the file
 
 - [ ] Lesson 1 is a welcome: instructor, delivery, audience, map — no content
