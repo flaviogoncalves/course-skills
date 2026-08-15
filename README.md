@@ -2,7 +2,7 @@
 
 Agent skills for building a real course — the craft, as markdown files you can read in 90 seconds and edit yourself.
 
-Eleven skills that take you from "I want to teach this" to a course with an outline, sources, lessons, slides, labs and questions. Each is one `SKILL.md`. No DSL, no orchestrator, nothing to install.
+Twelve skills that take you from "I want to teach this" to a course with an outline, sources, lessons, slides, labs and questions. Each is one `SKILL.md`. No DSL, no orchestrator, nothing to install.
 
 ## Install
 
@@ -52,6 +52,12 @@ Inside the course repo, in order:
 /course-review         the whole course at once, before you record anything
 ```
 
+Later, and repeatedly:
+
+```
+/course-maintenance    what changed since you recorded, and which lessons rotted
+```
+
 `course-domain-model` and `course-eval` are not steps — the first is the vocabulary discipline the others follow, the second judges any artifact against the checklist of the skill that made it.
 
 ## The model
@@ -97,6 +103,7 @@ That turns vocabulary into a dependency you can check — and it catches the def
 | `question-generation` | Per lesson. Questions tied to objectives, with distractors drawn from mistakes this audience actually makes. |
 | `course-eval` | Judging one artifact. Compliance fails; quality scores. Reads the checklist of whichever skill produced it. |
 | `course-review` | The lessons exist and you are about to record. Judges the course, not the artifacts. |
+| `course-maintenance` | The course is published and the subject moved. Audits for rot using each lesson's own references as the tripwire. |
 
 ## Why these exist
 
@@ -116,6 +123,8 @@ Each prevents a failure that is invisible until someone reads the finished cours
 
 **Every lesson passes and the course still fails.** The promise is never delivered, one concept is taught twice, another is used but never introduced. None of it is visible while reading a single lesson.
 
+**The course was right when you recorded it.** Then the tool shipped a major version, a flag was renamed, and a sentence you were confident about became false. Nothing tells you — students hit it and quietly conclude the course is out of date.
+
 Each skill states the failure it prevents, because a rule whose reason is forgotten is the first one dropped.
 
 ## Status
@@ -127,8 +136,6 @@ Each skill ends with a *Known rough edges* section naming what it does not solve
 ## What is not here
 
 **Narration audio.** The rules for *writing* narration live in `slide-generation`; producing the audio — voice, pacing, chunking — does not exist yet.
-
-**Maintenance.** A course rots when the tool it teaches moves. Nothing here answers "what changed since I recorded, and which lessons need redoing" — which is most of the real cost of owning a course.
 
 **Course-level topic research.** Deliberately absent. A general research pass produces a pool of references, and a pool becomes a distribution — the exact failure `lesson-references` exists to prevent.
 
