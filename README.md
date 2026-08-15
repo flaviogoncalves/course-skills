@@ -48,7 +48,9 @@ cp -r ~/course-skills/skills/* ~/.agents/skills/
 cp -r ~/course-skills/skills/* ~/.claude/skills/
 ```
 
-To update, `git pull` and re-copy. Use `ln -s` instead of `cp -r` if you would rather a pull update every harness at once — the trade is that editing a skill then edits the repo, which is usually what you want here.
+To update, `git pull` and re-copy. Or use `ln -s` instead of `cp -r`, and a pull updates every harness at once — Claude Code's loader takes a symlink where it takes a directory, and the other two resolve the file through it. Edit skills at the clone, not through the link: Claude Code refuses to write through a symlink, by design.
+
+**A newly installed skill appears in the next session, not the current one.** The list is built at startup. If you just installed and the name is not recognised, restart before assuming the path is wrong.
 
 ### Per project instead of globally
 
