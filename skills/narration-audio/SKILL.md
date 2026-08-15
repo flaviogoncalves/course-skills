@@ -9,15 +9,35 @@ This is production, not writing. The rules for *writing* narration live in `slid
 
 **Run this last.** Audio is the most expensive artifact in a course and the most brittle: change a lesson and its slides move, change the slides and this is dead. Everything upstream should be final.
 
-## One voice, one setting, for the whole course
+## Where the key lives, and where the settings live
 
-Pick once and record the choice next to the course, alongside the design:
+They go to opposite places, and getting this backwards is how a course repository leaks a credential.
 
+**The API key belongs to the MCP server, not to the course.** Configure it once where your agent declares its MCP servers, referencing an environment variable rather than pasting the value:
+
+```json
+{ "mcpServers": { "fish-audio": { "command": "…", "env": { "FISH_AUDIO_API_KEY": "${FISH_AUDIO_API_KEY}" } } } }
 ```
-voice        the id, and why — sample it against your own subject, not a demo script
-speed        one value, course-wide
-format       and sample rate, matching what your player expects
+
+Then export the key in your shell or keep it in an untracked `.env`. This skill never reads it, never asks for it, and never writes it anywhere.
+
+If your MCP config lives inside the course repository, add it to `.gitignore` — a course repo gets shared with editors and reviewers, which is exactly when a pasted key escapes.
+
+**The voice settings belong to the course, in git.** They are configuration, not secrets, and versioning them is what makes "one voice for the whole course" real rather than remembered. Create `course/narration.md` on the first run and read it on every run after:
+
+```markdown
+# Narration
+
+provider   fish-audio
+voice      <voice id>          why: sampled against lesson 4's narration, not a demo line
+speed      1.0
+format     mp3, 44.1kHz
+chosen     2026-08-15
 ```
+
+The date is not decoration. Providers update voice models, so audio generated a year from now may not match audio generated today — and when it does not, you want to know which voice and which day produced the originals.
+
+If a later run finds no `narration.md`, that is the signal to choose deliberately rather than accept a default. If it finds one, use it; changing voice mid-course is a decision, not a parameter.
 
 Consistency matters more here than the choice itself. A course where lesson 3 is slightly faster or noticeably brighter reads as careless, and the student cannot say why — they just trust it less. Sampling voices on a vendor's demo sentence tells you little; run a paragraph of *your* narration, with your technical terms in it.
 
@@ -71,7 +91,8 @@ Rate limits bite at course scale, not lesson scale. Generating twenty lessons ba
 
 ## It's working if
 
-- One voice and one speed across every lesson, recorded somewhere, not chosen per run
+- One voice and one speed across every lesson, read from `course/narration.md`, not chosen per run
+- The API key never appears in the course repository, in any file
 - Pronunciations live beside their terms in the glossary, decided once
 - A failed run resumes and does not re-pay for what succeeded
 - Nothing partial ships silently

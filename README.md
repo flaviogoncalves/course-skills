@@ -72,6 +72,7 @@ course/
   decisions/       course-grill      the few choices worth a record
   outline.md       course-outline    the lesson sequence
   design.md        build-design      the visual system
+  narration.md     narration-audio   voice, speed, format — settings, never keys
   lessons/…                          references, content, slides, labs, questions
 ```
 
