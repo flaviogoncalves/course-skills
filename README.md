@@ -10,13 +10,17 @@ A course lives in a folder, and each skill writes a file the next one reads:
 
 ```
 course/
-  contract.md      course-grill      the interview with the expert
+  contract.md      course-grill      promise, audience, scope, labs
+  glossary.md      course-grill      the course's words, beside the audience's
+  decisions/       course-grill      the few choices worth a record
   outline.md       course-outline    the lesson sequence
   design.md        build-design      the visual system
   lessons/…                          content, labs, references
 ```
 
-The contract is the file that makes the rest reproducible. Regenerate a lesson six months later and it still obeys the same promise and the same refusals.
+These files are written **during** the interview, term by term, not produced at the end. That is what makes the rest reproducible: regenerate a lesson six months later and it still obeys the same promise, the same words and the same refusals.
+
+The glossary is the one people underestimate. It is not a definitions list — it holds the audience's word beside the course's word, and that mismatch is how you find the lesson a generated outline always skips.
 
 ## Skills
 

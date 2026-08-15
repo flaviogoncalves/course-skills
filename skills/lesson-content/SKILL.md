@@ -5,7 +5,9 @@ description: Write the body of one lesson. Enforces concreteness, counter-exampl
 
 # Lesson Content
 
-Read `course/contract.md` and `course/outline.md` first. Write one lesson at a time.
+Read `course/contract.md`, `course/glossary.md` and `course/outline.md` first. Write one lesson at a time.
+
+Use the glossary's words exactly. If the audience calls the thing something else, say so once, the first time it appears — then use the course's word throughout. Alternating between the two teaches the student to distrust the course.
 
 The lesson serves **its own objectives** — the one or two stated in the outline. Not the course's objectives, not the topic in general. If you find yourself writing something that serves neither objective, it belongs in another lesson or nowhere.
 

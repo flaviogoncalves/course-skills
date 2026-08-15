@@ -5,7 +5,9 @@ description: Turn a course contract into a lesson sequence — a progression of 
 
 # Course Outline
 
-Read `course/contract.md` first. It outranks anything you find by searching: it came from the person who knows the audience. Where the two disagree, the contract wins.
+Read `course/contract.md` and `course/glossary.md` first. They outrank anything you find by searching: they came from the person who knows the audience. Where they disagree with research, the contract wins.
+
+The glossary tells you which lesson must exist. When several of the audience's words collapse into one of the course's — or one splits into several — that mismatch is the mental-model lesson, and it goes before first use.
 
 Write the result to `course/outline.md`.
 

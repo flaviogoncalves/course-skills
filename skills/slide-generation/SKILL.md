@@ -7,7 +7,9 @@ description: Turn one lesson into slides plus spoken narration. Enforces the spl
 
 Slides for one lesson. Two outputs per slide: what is **seen**, and what is **said**.
 
-Read `course/design.md` first — colour roles, type scale, the scrim rule, and the list of things this brand never does. If it does not exist, run `build-design` before this. Slides that each invent their own colours read as a pile of screens, not a course.
+Read `course/glossary.md` and `course/design.md` first. The glossary settles which word appears on the slide and in the narration; a slide that says one word while the narration says another reads as two courses.
+
+From `design.md` you need — colour roles, type scale, the scrim rule, and the list of things this brand never does. If it does not exist, run `build-design` before this. Slides that each invent their own colours read as a pile of screens, not a course.
 
 ## The split that makes slides work
 
