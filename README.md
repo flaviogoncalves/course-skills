@@ -2,7 +2,57 @@
 
 Agent skills for building a real course — the craft, as markdown files you can read in 90 seconds and edit yourself.
 
-Each skill is one `SKILL.md`. No DSL, no orchestrator, no package to install. Drop them in `.claude/skills/` and invoke them, or read them as a checklist and do the work by hand.
+Eleven skills that take you from "I want to teach this" to a course with an outline, sources, lessons, slides, labs and questions. Each is one `SKILL.md`. No DSL, no orchestrator, nothing to install.
+
+## Install
+
+```bash
+git clone https://github.com/flaviogoncalves/course-skills
+cp -r course-skills/skills/* ~/.claude/skills/
+```
+
+Per project instead of globally: copy into `.claude/skills/` inside the repo where the course lives.
+
+Then invoke by name — `/course-grill` to start. They also work as plain checklists if you would rather do the work yourself; nothing here needs an agent to be useful.
+
+## One repo per course
+
+That is the default, and the skills assume it: they write to `course/` at a fixed path, so two courses in one repository collide on the same `glossary.md` and `outline.md`. The collision is silent, and glossary ownership is per course, so it corrupts rather than errors.
+
+It also makes the git history mean something — you can see when the outline changed and read why.
+
+```bash
+mkdir my-course && cd my-course && git init
+```
+
+**The exception is a course line.** If you publish several courses under one brand, the visual system is shared and the vocabulary often overlaps. Copying `design.md` into five repositories is five places to drift. For that case:
+
+```
+courses/
+  brand/design.md          built once, by build-design
+  livekit-for-voip/course/ contract, glossary, outline, lessons
+  asterisk-basics/course/  its own everything
+```
+
+Keep `course/` per course even here. Share the design; never share the glossary — two courses teaching adjacent subjects will define the same word differently, and that is correct.
+
+## Start here
+
+Inside the course repo, in order:
+
+```
+/course-grill          interview yourself, or the expert, until there is a contract
+/course-outline        turn the contract into a lesson sequence
+/build-design          settle colour, type and contrast before any slide exists
+/lesson-references     per lesson — find sources, reject the ones without authority
+/lesson-content        per lesson — write it, grounded in those sources
+/slide-generation      per lesson — slides plus the spoken narration
+/lab-generator         per practical lesson — one milestone, every step checkable
+/question-generation   per lesson — questions whose wrong answers are real mistakes
+/course-review         the whole course at once, before you record anything
+```
+
+`course-domain-model` and `course-eval` are not steps — the first is the vocabulary discipline the others follow, the second judges any artifact against the checklist of the skill that made it.
 
 ## The model
 
@@ -10,57 +60,83 @@ A course lives in a folder, and each skill writes a file the next one reads:
 
 ```
 course/
-  contract.md      course-grill      promise, audience, scope, labs
+  contract.md      course-grill      promise, audience, scope, prerequisites, labs
   glossary.md      course-grill      the course's words, beside the audience's
   decisions/       course-grill      the few choices worth a record
   outline.md       course-outline    the lesson sequence
   design.md        build-design      the visual system
-  lessons/…                          content, labs, references
+  lessons/…                          references, content, slides, labs, questions
 ```
 
 These files are written **during** the interview, term by term, not produced at the end. That is what makes the rest reproducible: regenerate a lesson six months later and it still obeys the same promise, the same words and the same refusals.
 
-The glossary is the one people underestimate. It is not a definitions list — it holds the audience's word beside the course's word, and that mismatch is how you find the lesson a generated outline always skips.
+Nothing here is a framework. If a skill's rule is wrong for your course, edit the markdown — that is the intended way to use it.
 
-It also carries something a codebase glossary has no reason to: **which lesson introduces each term**. Code has no reading order, so a definition is enough. A course is consumed front to back, so a term is owned by a lesson, and no lesson may assume a term owned by a later one. That turns vocabulary into a dependency you can check — and catches the defect nobody reports, where lesson 3 uses a word explained in lesson 7.
+## The glossary is the piece people underestimate
+
+It is not a definitions list. It holds **the audience's word beside the course's word**, and that mismatch is how you find the lesson a generated outline always skips.
+
+When several of the audience's words collapse into one of yours — *channel*, *conference* → *room* — you have found a concept the course must teach explicitly, before first use. That is the missing lesson, every time.
+
+It also carries something a codebase glossary has no reason to: **which lesson introduces each term**. Code has no reading order, so a definition suffices. A course is consumed front to back, so a term is owned by a lesson, and no lesson may assume a term owned by a later one.
+
+That turns vocabulary into a dependency you can check — and it catches the defect nobody ever reports. A student who meets a word in lesson 3 that gets explained in lesson 7 does not write in to complain. They conclude the course is above them, and leave.
 
 ## Skills
 
-| Skill | What it does |
+| Skill | Reach for it when |
 |---|---|
-| `course-domain-model` | The vocabulary discipline: each term, the word the audience uses for it today, and the lesson that owns its introduction. Drives the glossary the others read. |
-| `course-grill` | Interviews the expert until there is a contract: promise, audience and what they already know, misconceptions, what is out of scope, the lab plan. Run this first. |
-| `course-outline` | Turns the contract into a progression of capability — and enforces the opening that generated outlines skip: welcome, problem, mental model, environment. |
-| `lesson-references` | Finds sources for **one** lesson, from that lesson's own title and objectives, and rejects anything that fails an authority test. |
-| `course-eval` | Judges an artifact against the contract and against the checklist of the skill that made it — compliance fails, quality scores. |
-| `course-review` | Reviews the whole course at once: does the arc deliver the promise, is anything taught twice or never, and what does each fix cost. |
-| `lesson-content` | Writes the lesson body: concrete claims, counter-examples, grounded in real sources, no packaging. |
-| `build-design` | Builds the visual system — colour roles, type scale, shape, contrast rules — as a `design.md` in Material Design's token vocabulary. Run before slides. |
-| `slide-generation` | Turns a lesson into slides plus spoken narration — the slide carries the skeleton, the narration carries the detail. |
-| `lab-generator` | Writes the hands-on lab for one milestone, starting where the previous lab ended, every step verifiable. |
-| `question-generation` | Writes the questions that check whether the lesson landed, with distractors drawn from the mistakes this audience really makes. |
+| `course-grill` | Starting anything. Interviews until there is a contract: promise, audience and what they already know, misconceptions, scope, prerequisites, lab plan. |
+| `course-domain-model` | Deciding what earns a glossary entry and which lesson owns it. Drives the glossary the rest read. |
+| `course-outline` | You have a contract and need a lesson sequence — a progression of capability, with the opening generated outlines skip: welcome, problem, mental model, environment. |
+| `build-design` | Before any slide exists. Colour roles, type scale, shape and contrast rules, written so a generator can obey them literally. |
+| `lesson-references` | Per lesson. Sources found from *that lesson's* title and objectives, each passing an authority test. Never a course-wide pool. |
+| `lesson-content` | Per lesson, once it has sources. Concrete claims, counter-examples, no packaging — and it refuses to write a lesson with nothing to stand on. |
+| `slide-generation` | Per lesson, after the content. Slides plus narration: the slide carries the skeleton, the narration teaches. |
+| `lab-generator` | Per practical lesson. One milestone, starting from the state the last lab left, every step with a check. |
+| `question-generation` | Per lesson. Questions tied to objectives, with distractors drawn from mistakes this audience actually makes. |
+| `course-eval` | Judging one artifact. Compliance fails; quality scores. Reads the checklist of whichever skill produced it. |
+| `course-review` | The lessons exist and you are about to record. Judges the course, not the artifacts. |
 
 ## Why these exist
 
-They are the parts that generators get wrong in ways that are invisible until someone reads the finished course.
+Each prevents a failure that is invisible until someone reads the finished course.
 
-**The outline opens in the wrong place.** No welcome, no basics, straight into the subject. Usually because a rule like "deliver a concrete win by lesson 3" is applied to a 27-lesson course, leaving one slot for everything foundational.
+**The outline opens in the wrong place.** No welcome, no basics, straight into the subject — often because a rule like "deliver a win by lesson 3" gets applied to a 27-lesson course, leaving one slot for everything foundational.
 
-**The references are almost right.** A course-level pool of eight links distributed across twenty-five lessons produces a plausible, mis-assigned source on every lesson — and if references feed content generation, that becomes the material the lesson is written from.
+**The references are almost right.** A course-level pool of eight links spread across twenty-five lessons is set-partitioning under pressure to fill slots. Every lesson ends up with a plausible, mis-assigned source — and if references feed content generation, that becomes the material the lesson is written from.
 
-**The slides are walls of text.** Written as a document instead of visual support, so the student has to choose between reading and listening and loses both — and the last block renders cut off, because nothing summed the heights before adding it.
+**A lesson gets written with no sources at all.** Indistinguishable, on the page, from one written from documentation. That is what quietly halves a course: some lessons anchored in real material, the rest fluent invention, nothing marking which is which.
 
-**The labs contradict each other.** Written in isolation, one tells the student to rebuild from scratch what the previous one made. Patching this afterwards by reading the earlier labs is archaeology; deciding the build order up front is not.
+**The slides are walls of text.** Written as a document rather than visual support, so the student chooses between reading and listening and loses both — and the last block renders cut off, because nothing summed the heights before adding it.
 
-**The questions test whether you read the page.** Answerable by pattern-matching the lesson's wording, with three obviously wrong options — it grades cleanly and measures nothing.
+**The labs contradict each other.** Written in isolation, one tells the student to rebuild from scratch what the previous one made. Patching that afterwards by reading the earlier labs is archaeology; deciding the build order up front is not.
 
-**Every lesson passes and the course still fails.** The promise is never delivered, one concept is taught twice, another is used but never introduced. None of it is visible while reading a single lesson, which is why per-artifact review cannot find it.
+**The questions test whether you read the page.** Answerable by pattern-matching the lesson's wording, with three obviously wrong options. It grades cleanly and measures nothing.
+
+**Every lesson passes and the course still fails.** The promise is never delivered, one concept is taught twice, another is used but never introduced. None of it is visible while reading a single lesson.
 
 Each skill states the failure it prevents, because a rule whose reason is forgotten is the first one dropped.
 
+## Status
+
+The rules here come from generating real courses and watching them break. The **skill format is new**, though: these were distilled from a production pipeline, not yet hardened as standalone skills in a clean terminal. Expect to find places where something obvious to the author was left implicit.
+
+Each skill ends with a *Known rough edges* section naming what it does not solve. Those are honest, not modest — reordering lessons quietly breaks both glossary ownership and lab inheritance, and nothing in here checks it for you.
+
+## What is not here
+
+**Narration audio.** The rules for *writing* narration live in `slide-generation`; producing the audio — voice, pacing, chunking — does not exist yet.
+
+**Maintenance.** A course rots when the tool it teaches moves. Nothing here answers "what changed since I recorded, and which lessons need redoing" — which is most of the real cost of owning a course.
+
+**Course-level topic research.** Deliberately absent. A general research pass produces a pool of references, and a pool becomes a distribution — the exact failure `lesson-references` exists to prevent.
+
 ## Contributing
 
-A skill earns its place by surviving real use. If a rule here cost you a bad course to learn, say so in the text — the reason is the part that makes it stick.
+A skill earns its place by preventing a failure you can name. If a rule here cost you a bad course to learn, say so in the text — the reason is the part that makes it stick, and the first thing dropped when it goes missing.
+
+Issues and pull requests welcome, especially reports of a rule that did not survive contact with a real course.
 
 ## License
 
