@@ -17,7 +17,7 @@ Build the queries from **that lesson's own title and objectives**. Do not ask a 
 
 Three queries are enough:
 
-1. **The title**, anchored with a domain term if the title is ambiguous on its own. "Handling duplicate webhooks" could be anything; "Handling duplicate webhooks n8n" is a search.
+1. **The title**, anchored with a domain term if the title is ambiguous on its own. "Handling duplicates" could be anything; "handling duplicate webhook deliveries" is a search.
 2. **The first objective**, stripped of Bloom boilerplate. "By the end the student will be able to apply an idempotency key" → "apply an idempotency key".
 3. **The title again, restricted to the canonical documentation site** — see below.
 
@@ -27,7 +27,7 @@ Keep queries short, 3–10 words. Search engines degrade on long blobs. Only add
 
 In open web search, the deep documentation page that serves one lesson loses to the product homepage and to generic tutorials — both rank better on almost any query.
 
-So run one query restricted to the canonical domain. You can usually identify it from the course-level research: if five of eight topic references are `docs.example.io`, that is the official site, and each lesson should hunt its own page inside it.
+So run one query restricted to the canonical domain — the tool's documentation site, the regulator's site, the professional body, whatever the primary source is for this field. You can usually identify it from the course-level research: if five of eight topic references share a domain, that is it, and each lesson should hunt its own page inside it.
 
 Never scope to a domain with a bad reputation signal — a content farm or SEO blog — or the technique becomes an amplifier for weak sources.
 
@@ -41,17 +41,17 @@ For each candidate, both tests must pass.
 
 **Adherence.** The source substantively treats *this lesson's* subtopic — you can extract a fact, procedure, number or example that serves the stated objectives. "It is about the general topic of the course" does not pass: the whole course is about the general topic.
 
-**Authority.** The source is a kind of thing you can ground teaching in. Best to worst:
+**Authority.** The source is a kind of thing you can ground teaching in. The ranking is the same everywhere, even though its top rung looks different per field:
 
-1. official documentation, specification, the project's own API reference
-2. the maintainer's repository — code, README, official example
-3. an academic paper, standard, or official body publication
-4. a recognised book, or an author who is a declared reference in the domain
-5. a deep technical article with code that runs and verifiable detail
+1. **The primary source** — whoever defines the thing. Official documentation for a tool; the standard or regulation for a compliance topic; the original study for a scientific claim; the institution's own published method for a discipline.
+2. **The people who maintain or practise it publicly** — the maintainer's repository, the professional body, the practitioner who publishes their working method with evidence.
+3. **Peer-reviewed or officially published work** — a paper, a standard, a government or industry-body publication.
+4. **A recognised book, or an author the field itself cites** as a reference.
+5. **A deep article with verifiable specifics** — numbers, procedure, worked example, something a reader could check.
 
-Below that is not a course reference. Reject shallow blog posts that restate the documentation, SEO content, "top 10 tools" listicles, aggregators, machine translations, and marketing copy wearing technical jargon.
+Below that is not a course reference. Reject shallow posts that restate the primary source in other words, SEO content, "top 10" listicles, aggregators, machine translations, and marketing copy wearing the field's jargon.
 
-The practical test: **if this page is wrong, does anyone fix it?** Official docs and repositories have owners. An SEO blog stays wrong forever.
+The practical test: **if this page is wrong, does anyone fix it?** A primary source has an owner with a reason to correct it. An SEO blog stays wrong forever.
 
 **A source that is on-topic but has no authority is rejected.** This is the most common case and the most tempting one — the blog talks about exactly the lesson's subject, which is precisely why it looks good.
 

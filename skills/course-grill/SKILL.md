@@ -13,7 +13,7 @@ Your job is to interview the expert until you have a contract. You are not filli
 
 **The promise.** What the student can *do* at the end, observable. "Understand Kubernetes" is not a promise. "Deploy a service and roll it back after a failed release" is.
 
-**The audience AND what they already know.** Both, together. "VoIP engineers" does not tell you where the course starts. Do they know WebRTC? Have they used containers? That single answer moves the first five lessons.
+**The audience AND what they already know.** Both, together. "Backend engineers" does not tell you where the course starts — do they already deploy containers? "Small business owners" does not either — have they ever run a paid ad? That single answer moves the first five lessons.
 
 **The misconceptions.** What this audience gets *wrong* because they come from a neighbouring world. This is the most valuable thing in the interview and the expert gives it away for free, because they watch people make the same mistake every week.
 
@@ -29,7 +29,7 @@ Your job is to interview the expert until you have a contract. You are not filli
 
 Ask whether the labs build **one thing that grows** or are **independent exercises**.
 
-A PBX course is almost always the first kind: install, then extensions, then a trunk, then an IVR, then queues, then security — always the same system. A course of tips and techniques is the second kind.
+Anything that teaches a system is almost always the first kind: install it, add users, connect it to the outside, handle failure, secure it — always the same instance, growing. A course of techniques is the second kind: each shot in a photography course stands alone, each negotiation tactic is its own exercise.
 
 If it is continuous, get **what the student ends up with** and **the order the pieces arrive in**. Without that, each lab is written in isolation and they contradict each other: one tells the student to start from scratch what the previous one built; another asks for "the Go service from the last lesson" when every earlier lesson was Python.
 
@@ -41,7 +41,7 @@ Also ask **how the student confirms it worked** — the command, the screen, the
 
 **One question at a time.** Two questions in one turn get one answer, always to the easier half.
 
-**Ask off the last answer, not off your list.** If they said "for people who already run Asterisk", the next question is about what that person will find strange here — not the next item in your checklist.
+**Ask off the last answer, not off your list.** If they said "for people who already manage their own servers", the next question is about what that person will find strange here — not the next item in your checklist.
 
 **Push back on vague answers, and offer a concrete alternative.** "All levels" is not an audience. Ask whether a beginner should be able to follow with no prerequisite, or whether you can assume experience.
 

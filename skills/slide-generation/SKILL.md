@@ -35,9 +35,9 @@ Calibrate the exact numbers to your renderer, but keep the shape of these — th
 
 Bullets are noun phrases or verb-led and punchy — never a complete sentence with subject, verb, object and qualifier. One concept per bullet, never three joined by commas.
 
-> Wrong: "Use a distributed cache such as Redis or Memcached to reduce latency on frequent queries that hit the relational database, especially on read-intensive endpoints"
+> Wrong: "Use a distributed cache to reduce latency on frequent queries that hit the database, especially on endpoints that read far more often than they write"
 >
-> Right: "Cache hot reads in Redis" · "Latency: 50ms → 2ms" · "Only for immutable data"
+> Right: "Cache the hot reads" · "Latency: 50ms → 2ms" · "Only for data that rarely changes"
 
 ## The height budget
 

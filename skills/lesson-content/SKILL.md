@@ -27,9 +27,10 @@ Every sentence should carry information the student did not have before reading 
 
 | Hollow | Anchored |
 |---|---|
-| "Caching improves performance" | "Cache hot reads in Redis: 50ms → 2ms" |
-| "Configure security properly" | "Restrict the trunk to the carrier's signalling IPs; anything else is rejected at connect" |
-| "The API is easy to integrate" | "One POST with three fields; the response carries the room token" |
+| "Caching improves performance" | "Cache the read: 50ms → 2ms" |
+| "Configure security properly" | "Allow only your office IP range; everything else is refused at connect" |
+| "Good lighting matters" | "Move the lamp to 45° and one metre back; the nose shadow disappears" |
+| "Handle objections early" | "Ask about budget on the first call, before the demo, not after" |
 
 If you cannot anchor a claim, you do not know it well enough to teach it — go back to the sources or mark it as a gap.
 
@@ -57,7 +58,7 @@ When the sources do not cover something the lesson needs, say so in the text —
 
 ## Respect the contract's refusals
 
-Anything on the contract's out-of-scope list stays out, however naturally it comes up. If the course says "we do not teach configuring Asterisk — the student already has it", then you connect to Asterisk without teaching its configuration, even when a paragraph about it would flow nicely.
+Anything on the contract's out-of-scope list stays out, however naturally it comes up. If the course says "we do not teach the database — the student already runs one", then you connect to their database without teaching how to administer it, even when a paragraph about it would flow nicely.
 
 Scope creep in a lesson is invisible: nothing errors, the lesson just gets longer and the course gets shallower.
 
