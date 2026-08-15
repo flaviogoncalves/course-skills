@@ -6,14 +6,65 @@ Thirteen skills that take you from "I want to teach this" to a course with an ou
 
 ## Install
 
+These follow the [Agent Skills standard](https://agentskills.io/specification) — `name` and `description` in the frontmatter, nothing else required — so the same files work in Claude Code, OpenCode and Pi. Only the folder and the invocation differ.
+
 ```bash
-git clone https://github.com/flaviogoncalves/course-skills
-cp -r course-skills/skills/* ~/.claude/skills/
+git clone https://github.com/flaviogoncalves/course-skills ~/course-skills
 ```
 
-Per project instead of globally: copy into `.claude/skills/` inside the repo where the course lives.
+Then copy them where your agent looks:
 
-Then invoke by name — `/course-grill` to start. They also work as plain checklists if you would rather do the work yourself; nothing here needs an agent to be useful.
+**Claude Code**
+
+```bash
+mkdir -p ~/.claude/skills && cp -r ~/course-skills/skills/* ~/.claude/skills/
+```
+
+Invoke by name: `/course-grill`.
+
+**OpenCode**
+
+Already done, if you ran the Claude Code line — OpenCode reads `~/.claude/skills/` too. Otherwise pick either of its own:
+
+```bash
+mkdir -p ~/.config/opencode/skills && cp -r ~/course-skills/skills/* ~/.config/opencode/skills/
+```
+
+OpenCode has no slash form for skills; the agent calls its `skill` tool when a task matches. Ask for one by name — *"use course-grill to interview me"* — and it will. Skills are on by default.
+
+**Pi**
+
+```bash
+mkdir -p ~/.agents/skills && cp -r ~/course-skills/skills/* ~/.agents/skills/
+```
+
+Invoke with `/skill:course-grill`. `~/.pi/agent/skills/` works too.
+
+**All three at once.** `~/.agents/skills/` is read by OpenCode *and* Pi, and `~/.claude/skills/` by Claude Code *and* OpenCode, so two copies cover everything:
+
+```bash
+mkdir -p ~/.agents/skills ~/.claude/skills
+cp -r ~/course-skills/skills/* ~/.agents/skills/
+cp -r ~/course-skills/skills/* ~/.claude/skills/
+```
+
+To update, `git pull` and re-copy. Use `ln -s` instead of `cp -r` if you would rather a pull update every harness at once — the trade is that editing a skill then edits the repo, which is usually what you want here.
+
+### Per project instead of globally
+
+Same files, inside the course repo. Useful when you have edited a rule for one specific course.
+
+| Harness | Project folder | Invoke |
+|---|---|---|
+| Claude Code | `.claude/skills/` | `/course-grill` |
+| OpenCode | `.opencode/skills/`, `.claude/skills/` or `.agents/skills/` | by name, in prose |
+| Pi | `.agents/skills/` or `.pi/skills/` | `/skill:course-grill` |
+
+`.agents/skills/` is the one folder OpenCode and Pi both read. Pi also walks up from the working directory to the git root, so a skill at the repo root reaches every subfolder.
+
+### Any other agent, or none
+
+They are plain markdown with a two-field header. Paste the file into whatever you use, or read it yourself — every skill ends in a checklist, and nothing here needs an agent to be useful.
 
 ## One repo per course
 
@@ -41,22 +92,22 @@ Keep `course/` per course even here. Share the design; never share the glossary 
 Inside the course repo, in order:
 
 ```
-/course-grill          interview yourself, or the expert, until there is a contract
-/course-outline        turn the contract into a lesson sequence
-/build-design          settle colour, type and contrast before any slide exists
-/lesson-references     per lesson — find sources, reject the ones without authority
-/lesson-content        per lesson — write it, grounded in those sources
-/slide-generation      per lesson — slides plus the spoken narration
-/lab-generator         per practical lesson — one milestone, every step checkable
-/question-generation   per lesson — questions whose wrong answers are real mistakes
-/narration-audio       per lesson — the written narration becomes audio, last of all
-/course-review         the whole course at once, before you record anything
+course-grill          interview yourself, or the expert, until there is a contract
+course-outline        turn the contract into a lesson sequence
+build-design          settle colour, type and contrast before any slide exists
+lesson-references     per lesson — find sources, reject the ones without authority
+lesson-content        per lesson — write it, grounded in those sources
+slide-generation      per lesson — slides plus the spoken narration
+lab-generator         per practical lesson — one milestone, every step checkable
+question-generation   per lesson — questions whose wrong answers are real mistakes
+narration-audio       per lesson — the written narration becomes audio, last of all
+course-review         the whole course at once, before you record anything
 ```
 
 Later, and repeatedly:
 
 ```
-/course-maintenance    what changed since you recorded, and which lessons rotted
+course-maintenance    what changed since you recorded, and which lessons rotted
 ```
 
 `course-domain-model` and `course-eval` are not steps — the first is the vocabulary discipline the others follow, the second judges any artifact against the checklist of the skill that made it.
