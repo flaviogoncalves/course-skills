@@ -55,6 +55,10 @@ The generating skill carries the rubric. These are the things easiest to miss wh
 
 **Questions.** Could someone who understood but did not memorise the wording pass? Is each distractor a mistake a real person makes?
 
+## Not your job
+
+Anything that only shows across lessons — the promise never delivered, a concept taught twice, weight badly distributed — belongs to `course-review`. Judging one artifact cannot see it, and guessing at it from one lesson produces noise.
+
 ## Output
 
 For each finding: where it is, what is wrong, and what to do about it. Ordered by what to fix first.

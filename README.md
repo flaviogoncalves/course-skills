@@ -33,6 +33,7 @@ It also carries something a codebase glossary has no reason to: **which lesson i
 | `course-outline` | Turns the contract into a progression of capability — and enforces the opening that generated outlines skip: welcome, problem, mental model, environment. |
 | `lesson-references` | Finds sources for **one** lesson, from that lesson's own title and objectives, and rejects anything that fails an authority test. |
 | `course-eval` | Judges an artifact against the contract and against the checklist of the skill that made it — compliance fails, quality scores. |
+| `course-review` | Reviews the whole course at once: does the arc deliver the promise, is anything taught twice or never, and what does each fix cost. |
 | `lesson-content` | Writes the lesson body: concrete claims, counter-examples, grounded in real sources, no packaging. |
 | `build-design` | Builds the visual system — colour roles, type scale, shape, contrast rules — as a `design.md` in Material Design's token vocabulary. Run before slides. |
 | `slide-generation` | Turns a lesson into slides plus spoken narration — the slide carries the skeleton, the narration carries the detail. |
@@ -52,6 +53,8 @@ They are the parts that generators get wrong in ways that are invisible until so
 **The labs contradict each other.** Written in isolation, one tells the student to rebuild from scratch what the previous one made. Patching this afterwards by reading the earlier labs is archaeology; deciding the build order up front is not.
 
 **The questions test whether you read the page.** Answerable by pattern-matching the lesson's wording, with three obviously wrong options — it grades cleanly and measures nothing.
+
+**Every lesson passes and the course still fails.** The promise is never delivered, one concept is taught twice, another is used but never introduced. None of it is visible while reading a single lesson, which is why per-artifact review cannot find it.
 
 Each skill states the failure it prevents, because a rule whose reason is forgotten is the first one dropped.
 
