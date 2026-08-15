@@ -24,6 +24,8 @@ That last row catches people out. Most of what you discuss earns no file, delibe
 
 ## The glossary is the point
 
+`course-domain-model` owns the discipline — what earns a record, the four fields, the ownership rule. Read it; this section is only what the interview needs.
+
 In a course, a glossary is not a definitions list. It is a **translation table**: the word the audience uses today beside the word this course will use.
 
 ```markdown

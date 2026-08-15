@@ -9,6 +9,8 @@ Read `course/contract.md`, `course/glossary.md` and `course/outline.md` first. W
 
 Use the glossary's words exactly. If the audience calls the thing something else, say so once, the first time it appears — then use the course's word throughout. Alternating between the two teaches the student to distrust the course.
 
+**You may only assume terms owned by earlier lessons.** If this lesson introduces a term, it spends the time to teach it; if it needs one owned by a later lesson, the outline is wrong — say so instead of quietly defining it here.
+
 The lesson serves **its own objectives** — the one or two stated in the outline. Not the course's objectives, not the topic in general. If you find yourself writing something that serves neither objective, it belongs in another lesson or nowhere.
 
 ## Content only — no packaging

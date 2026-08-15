@@ -39,6 +39,8 @@ How to detect it: **when several misconceptions in the contract share a conceptu
 
 **Test, lesson by lesson:** can the student follow this having seen only the ones before? If not, it is too early.
 
+**And check it against the vocabulary.** Every glossary term names the lesson that introduces it; no lesson may assume a term owned by a later one. This is the mechanical half of the same test — see `course-domain-model`. When you find a term with no lesson to own it, you have found a missing lesson, not a missing definition.
+
 ## What earns a lesson
 
 - **Core** — without it the rest does not stand. Its own lesson.
@@ -76,3 +78,4 @@ Group consecutive lessons under a module with a title and a short explanatory te
 - [ ] Nothing from the contract's out-of-scope list became a lesson
 - [ ] No lesson exists only because the topic appeared on the expert's list
 - [ ] No lesson carries 3+ objectives, and no objective is generic
+- [ ] Every glossary term has an owning lesson, and no lesson uses a term owned by a later one

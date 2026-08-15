@@ -22,10 +22,13 @@ These files are written **during** the interview, term by term, not produced at 
 
 The glossary is the one people underestimate. It is not a definitions list — it holds the audience's word beside the course's word, and that mismatch is how you find the lesson a generated outline always skips.
 
+It also carries something a codebase glossary has no reason to: **which lesson introduces each term**. Code has no reading order, so a definition is enough. A course is consumed front to back, so a term is owned by a lesson, and no lesson may assume a term owned by a later one. That turns vocabulary into a dependency you can check — and catches the defect nobody reports, where lesson 3 uses a word explained in lesson 7.
+
 ## Skills
 
 | Skill | What it does |
 |---|---|
+| `course-domain-model` | The vocabulary discipline: each term, the word the audience uses for it today, and the lesson that owns its introduction. Drives the glossary the others read. |
 | `course-grill` | Interviews the expert until there is a contract: promise, audience and what they already know, misconceptions, what is out of scope, the lab plan. Run this first. |
 | `course-outline` | Turns the contract into a progression of capability — and enforces the opening that generated outlines skip: welcome, problem, mental model, environment. |
 | `lesson-references` | Finds sources for **one** lesson, from that lesson's own title and objectives, and rejects anything that fails an authority test. |
