@@ -35,6 +35,8 @@ It also carries something a codebase glossary has no reason to: **which lesson i
 | `lesson-content` | Writes the lesson body: concrete claims, counter-examples, grounded in real sources, no packaging. |
 | `build-design` | Builds the visual system — colour roles, type scale, shape, contrast rules — as a `design.md` in Material Design's token vocabulary. Run before slides. |
 | `slide-generation` | Turns a lesson into slides plus spoken narration — the slide carries the skeleton, the narration carries the detail. |
+| `lab-generator` | Writes the hands-on lab for one milestone, starting where the previous lab ended, every step verifiable. |
+| `question-generation` | Writes the questions that check whether the lesson landed, with distractors drawn from the mistakes this audience really makes. |
 
 ## Why these exist
 
@@ -47,6 +49,8 @@ They are the parts that generators get wrong in ways that are invisible until so
 **The slides are walls of text.** Written as a document instead of visual support, so the student has to choose between reading and listening and loses both — and the last block renders cut off, because nothing summed the heights before adding it.
 
 **The labs contradict each other.** Written in isolation, one tells the student to rebuild from scratch what the previous one made. Patching this afterwards by reading the earlier labs is archaeology; deciding the build order up front is not.
+
+**The questions test whether you read the page.** Answerable by pattern-matching the lesson's wording, with three obviously wrong options — it grades cleanly and measures nothing.
 
 Each skill states the failure it prevents, because a rule whose reason is forgotten is the first one dropped.
 

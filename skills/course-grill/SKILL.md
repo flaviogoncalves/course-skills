@@ -66,11 +66,19 @@ Get the versions. "Recent Node" is not a prerequisite; it is a support ticket. A
 
 **The lab plan.** Do the labs build **one thing that grows**, or are they **independent exercises**? Anything teaching a system is almost always the first: install it, add users, connect it outward, handle failure, secure it — the same instance, growing. A course of techniques is the second: each shot in a photography course stands alone.
 
+**Where does the lab run?** Ask before anything else about labs, because it decides what every step may assume:
+
+- **The student's own machine** — every step must tolerate their operating system, their versions, their existing installs. Expect variation and say what to do when it bites.
+- **An environment you provide** — a sandbox, a VM image, a prepared account. Steps can be exact, because the ground is known.
+- **A service they sign up for** — exact, but gated on a free tier that may change, and on a sign-up you do not control.
+
 If continuous, you need three things, and record them as **structure, not prose** — the order is load-bearing, and prose has no order:
 
 - **The artifact**: what the student ends up holding. One sentence.
 - **The milestones, in sequence**: what each step adds to that artifact. This ordering becomes the order of the practical lessons, so getting it wrong here reorders the course.
 - **The success signal, per milestone**: the command, the screen, the sound. How the student knows this step worked before starting the next.
+
+Push for signals a machine could check — a command with expected output, an HTTP status, a file that now exists. Some are irreducibly human ("the audio is clean in both directions"), and that is fine; but a signal that could have been a command and was written as a feeling is a signal nobody will act on.
 
 Without the sequence, each lab is written in isolation and they contradict each other — one tells the student to rebuild from scratch what the last one made, another asks for something built in a language no earlier lab used.
 
@@ -105,6 +113,7 @@ Who they are.
 
 ## Labs
 Style: continuous | isolated | none
+Runs on: student's machine | provided environment | third-party service
 Artifact: what the student ends up with
 
 | # | Milestone | Success signal |
